@@ -30,13 +30,13 @@ public class GestureSample implements EntryPoint {
   Transitions d = $("<div></div>").as(Transitions.Transitions).css(div_css).css(img_css).appendTo(c).as(Transitions.Transitions);
   GQuery s = $("<p id='msg'>Try a gesture </p>").css(par_css).appendTo(c);
   
-  String shakeAnimation = $(window).as(KeyFrame.KeyFrame).keyFrame(null, $$("duration: 0.8s, count: infinite"), new FrameGenerator() {
+  String shakeAnimation = $(window).as(KeyFrame.KeyFrame).keyFrame(null, $$("duration: 1s, count: infinite"), new FrameGenerator() {
     int r () {
-      return Random.nextInt(3) * (Random.nextBoolean() ? -1 : 1);
+      return 3 * Random.nextInt(3) * (Random.nextBoolean() ? -1 : 1);
     }
     public void f(Frame f) {
       if (f.percent() % 10 == 0)
-        f.transform($$().set("translateX", r()).set("translateY", r()).set("rotate", 1 + r()));
+        f.transform($$().set("translateX", r()).set("translateY", r()).set("rotate", r()));
     }
   });
   
