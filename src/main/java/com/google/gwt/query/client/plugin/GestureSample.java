@@ -240,7 +240,7 @@ public class GestureSample implements EntryPoint {
     c.bind("tapone", new Function(){public void f() {
       rotate(360);
       Options o = arguments(0);
-      log("TAP-ONE " + o.description() + " x="+  o.screenX() + " y="+  o.screenY());
+      log("TAP-ONE " + o.description() + " x="+  o.pageX() + " y="+  o.pageY());
     }});
     c.bind("taptwo", new Function(){public void f() {
       rotate(360 * 2);
